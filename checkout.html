@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Rayan Store</title>
+<meta name="description" content="Complete your Rayan Store order via bKash Send Money.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader"><div class="loader-tag"></div></div>
+
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="tag-mark"></span>Rayan Store</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="products.html" class="btn btn-brass">Shop Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section class="page-hero" style="padding:48px 0 40px;">
+    <div class="wrap">
+      <p class="crumbs"><a href="index.html">Home</a> / Checkout</p>
+      <p class="eyebrow">Almost there</p>
+      <h1>Checkout</h1>
+      <p>Confirm your item, pay via bKash, and fill in your delivery details below.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:36px;">
+    <div class="wrap checkout-grid">
+
+      <!-- LEFT: form -->
+      <div class="panel reveal">
+        <h2>Delivery Details</h2>
+
+        <div class="bkash-box">
+          <div class="bk-head">
+            <span class="bkash-badge">bKash</span>
+            <strong>Send Money Only</strong>
+          </div>
+          <p style="font-size:.88rem; color:rgba(248,244,236,.75); position:relative; z-index:1;">Send the exact total amount using <b>Send Money</b> to the number below.</p>
+          <div class="bkash-number">01768697155</div>
+          <div class="bkash-steps">
+            1. Open your bKash app and choose <b>Send Money</b><br>
+            2. Enter <b>01768697155</b> and the exact order total<br>
+            3. Complete the payment and keep the reference<br>
+            4. Tick the confirmation box below and submit your order
+          </div>
+        </div>
+
+        <form id="checkoutForm" novalidate>
+
+          <div class="field">
+            <label for="productSelect">Select Product</label>
+            <select id="productSelect">
+              <option value="relax-keychain">Relax Keychain — 350 BDT</option>
+              <option value="football-player-brooch">Football Player Brooch — 150 BDT</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="e.g. Rayan Ahmed" required>
+            <div class="error-msg">Please enter your full name.</div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="mobile">Mobile Number</label>
+              <input type="tel" id="mobile" placeholder="01XXXXXXXXX" required>
+              <div class="error-msg">Enter a valid 11-digit mobile number.</div>
+            </div>
+            <div class="field">
+              <label for="district">District</label>
+              <input type="text" id="district" placeholder="e.g. Dhaka" required>
+              <div class="error-msg">Please enter your district.</div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="area">Area / Thana</label>
+              <input type="text" id="area" placeholder="e.g. Mirpur 10" required>
+              <div class="error-msg">Please enter your area.</div>
+            </div>
+            <div class="field">
+              <label for="notes">Order Notes (Optional)</label>
+              <input type="text" id="notes" placeholder="Any special instructions">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="address">Full Address</label>
+            <textarea id="address" placeholder="House, road, landmark..." required></textarea>
+            <div class="error-msg">Please enter your full delivery address.</div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="paymentConfirm">
+            <label for="paymentConfirm" style="margin:0;">I have completed the bKash Send Money payment to <strong>01768697155</strong>.</label>
+          </div>
+          <div class="error-msg" id="paymentError">You must confirm your bKash payment before submitting.</div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitOrderBtn" style="margin-top:10px;">Place Order</button>
+        </form>
+      </div>
+
+      <!-- RIGHT: summary -->
+      <div class="summary-box reveal">
+        <h3>Order Summary</h3>
+        <div class="summary-item" id="summaryItem"></div>
+        <div class="summary-line"><span>Subtotal</span><span id="lineSubtotal">—</span></div>
+        <div class="summary-line"><span>Delivery Charge</span><span id="lineDelivery">—</span></div>
+        <div class="summary-line total"><span>Total</span><span id="lineTotal">—</span></div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>&copy; 2026 Rayan Store. All rights reserved.</span>
+      <span>Pay securely via bKash</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
